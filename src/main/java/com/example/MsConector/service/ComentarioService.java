@@ -13,7 +13,7 @@ public class ComentarioService {
         String usuarioUrl = "http://localhost:8082/profesores/obtenerProfe/"+id;
         String usuarioData = restTemplate.getForObject(usuarioUrl, String.class);
         
-        String materiaUrl = "http://localhost:8080/api/cursos/"+id;
+        String materiaUrl = "http://localhost:8080/api/cursos/profesor/"+id;
         String materiaData = restTemplate.getForObject(materiaUrl, String.class);
 
         return "{\"usuario\": "+usuarioData + " ,\"materias\": "+ materiaData+" }";
