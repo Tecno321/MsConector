@@ -14,7 +14,7 @@ public class ComentarioController {
     @Autowired
     private ComentarioService comentarioService;
 
-    @GetMapping("/comentariosProfesor/{id}")
+    @GetMapping("/materiasProfesor/{id}")
     public ResponseEntity<String> obtenerMateriasProfesor(@PathVariable int id){
         String resultado = comentarioService.obtenerMateriasPorProfesor(id);
         if (resultado.startsWith("Error")) {
@@ -23,7 +23,7 @@ public class ComentarioController {
         return ResponseEntity.ok(resultado);
     }
 
-    @GetMapping("/comentariosAlumno/{id}")
+    @GetMapping("/materiasAlumno/{id}")
     public ResponseEntity<String> obtenerMateriasAlumno(@PathVariable int id){
                 String resultado = comentarioService.obtenerMateriasDeAlumno(id);
         if (resultado.startsWith("Error")) {
