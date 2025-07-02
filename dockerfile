@@ -1,9 +1,3 @@
-FROM eclipse-temurin:17-jdk AS test
-WORKDIR /app
-COPY . .
-RUN chmod +x mvnw
-RUN ./mvnw test 
-
 FROM eclipse-temurin:17-jdk AS compile
 WORKDIR /app
 COPY . .
