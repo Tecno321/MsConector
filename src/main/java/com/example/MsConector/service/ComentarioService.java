@@ -11,10 +11,10 @@ public class ComentarioService {
 
     public String obtenerMateriasPorProfesor(int id){
         try {
-        String usuarioUrl = "http://localhost:8082/profesores/obtenerProfe/"+id;
+        String usuarioUrl = "http://44.208.149.48:8082/profesores/obtenerProfe/"+id;
         String usuarioData = restTemplate.getForObject(usuarioUrl, String.class);
         
-        String materiaUrl = "http://localhost:8080/api/cursos/profesor/"+id;
+        String materiaUrl = "http://52.71.94.130:8080/api/cursos/profesor/"+id;
         String materiaData = restTemplate.getForObject(materiaUrl, String.class);
 
         return "{\"usuario\": "+usuarioData + " ,\"materias\": "+ materiaData+" }";
@@ -28,10 +28,10 @@ public class ComentarioService {
 
     public String obtenerMateriasDeAlumno(int id){
         try {
-        String usuarioUrl = "http://localhost:8082/alumnos/obtenerAlumno/"+id;
+        String usuarioUrl = "http://44.208.149.48:8082/alumnos/obtenerAlumno/"+id;
         String usuarioData = restTemplate.getForObject(usuarioUrl, String.class);
         
-        String materiaUrl = "http://localhost:8080/api/cursos/"+id;
+        String materiaUrl = "http://52.71.94.130:8080/api/cursos/materias/alumno/"+id;
         String materiaData = restTemplate.getForObject(materiaUrl, String.class);
 
         return "{\"usuario\": "+usuarioData + " ,\"materias\": "+ materiaData+" }";            
